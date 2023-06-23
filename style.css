@@ -7,6 +7,7 @@ body {
   margin: 0;
   text-align: center;
   color: #333;
+  background: pink;
   min-width: 375px;
 }
 
@@ -49,6 +50,7 @@ main > label > div {
 input[type=number] {
   font-size: inherit;
   color: #555;
+  background: transparent;
   border: none;
   text-align: right;
   text-decoration: none;

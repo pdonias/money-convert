@@ -35,7 +35,6 @@ async function handleFetch(req) {
       ;(await caches.open(NAME)).put(req, res.clone())
     }
   } catch (err) {
-    const url = new URL(req.url)
     res = await caches.match(req)
     if (res === undefined) {
       throw err
