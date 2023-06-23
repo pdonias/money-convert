@@ -1,0 +1,19 @@
+{
+  "short_name": "Converter",
+  "name": "EUR-MXN converter",
+  "scope": "/",
+  "start_url": "/",
+  "theme_color": "#004494",
+  "background_color": "#004494",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/ico",
+      "sizes": "48x48",
+      "purpose": "any maskable"
+    }
+  ]
+}
