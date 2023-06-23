@@ -1,3 +1,12 @@
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    console.log('Registering SW')
+    navigator.serviceWorker.register('/sw.js').then(({ scope }) => {
+      console.log('SW registered')
+    })
+  })
+}
+
 window.addEventListener('load', event => {
   const mxn = document.querySelector('#mxn input')
   const eur = document.querySelector('#eur input')
