@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Money converter</title>
-</head>
-<body>
-  <h1>It works!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Euro to Mexican Peso converter</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>EUR ↔ MXN</h1>
+    <pre id="rate">&nbsp;</pre>
+    <main>
+      <label id="eur">
+        <div>
+          <input type="number" step="1" min="0.00" onFocus="this.select()" />
+        </div>
+        <div>EUR</div>
+      </label>
+      <label id="mxn">
+        <div>
+          <input type="number" step="1" min="0.00" onFocus="this.select()" />
+        </div>
+        <div>MXN</div>
+      </label>
+    </main>
+  </body>
 </html>

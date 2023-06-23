@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  text-align: center;
+  color: #333;
+  min-width: 375px;
+}
+
+pre {
+  color: rgb(117, 3, 3);
+  font-size: .7em;
+}
+
+#eur {
+  color: #004494;
+}
+
+#mxn {
+  color: #006341;
+}
+
+main {
+  font-size: 2em;
+  margin: 100px auto;
+  max-width: 30em;
+}
+
+main > label {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  gap: .6em;
+}
+
+main > label > * {
+  flex: 1 1 0;
+}
+
+main > label > div {
+  display: inline-block;
+  text-align: left;
+  font-weight: bold;
+}
+
+input[type=number] {
+  font-size: inherit;
+  color: #555;
+  border: none;
+  text-align: right;
+  text-decoration: none;
+  appearance: textfield;
+  width: 100%;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield;
+}
