@@ -6,13 +6,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   text-align: center;
-  color: #333;
-  background: pink;
+  color: white;
+  background: #6a7b82;
   min-width: 375px;
 }
 
 pre {
-  color: rgb(117, 3, 3);
+  color: rgb(118, 0, 0);
   font-size: .7em;
 }
 
@@ -49,7 +49,7 @@ main > label > div {
 
 input[type=number] {
   font-size: inherit;
-  color: #555;
+  color: white;
   background: transparent;
   border: none;
   text-align: right;
@@ -72,4 +72,8 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield; /* Firefox */
   appearance: textfield;
+}
+
+img {
+  border-radius: 15px;
 }
