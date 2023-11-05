@@ -29,16 +29,30 @@ window.addEventListener('load', event => {
   mxn.value = rate.toFixed(2)
 
   mxn.addEventListener('input', event => {
-    const newValue = +mxn.value
-    if (!Number.isNaN(newValue)) {
-      eur.value = (newValue / rate).toFixed(2)
+    const n = parse(mxn.value)
+    if (n !== null) {
+      eur.value = render(n / rate)
     }
   })
 
   eur.addEventListener('input', event => {
-    const newValue = +eur.value
-    if (!Number.isNaN(newValue)) {
-      mxn.value = (newValue * rate).toFixed(2)
+    const n = parse(eur.value)
+    if (n !== null) {
+      mxn.value = render(n * rate)
+    }
+  })
+
+  mxn.addEventListener('blur', event => {
+    const n = parse(mxn.value)
+    if (n !== null) {
+      mxn.value = render(n)
+    }
+  })
+
+  eur.addEventListener('blur', event => {
+    const n = parse(eur.value)
+    if (n !== null) {
+      eur.value = render(n)
     }
   })
 
@@ -62,8 +76,8 @@ window.addEventListener('load', event => {
         rateEl.textContent = `rate: ${rate}; last updated: ${now.toLocaleString()}`
         setCookie('rate', rate)
         setCookie('lastUpdate', now.toISOString())
-        eur.value = '1.00'
-        mxn.value = rate.toFixed(2)
+        eur.value = render(1)
+        mxn.value = render(rate)
       })
       .catch(err => {
         console.error(err)
@@ -71,6 +85,26 @@ window.addEventListener('load', event => {
       })
   }
 })
+
+function parse(s) {
+  s = s.replace(/[ ,]/g, '')
+
+  if (s === '') {
+    return null
+  }
+
+  return Number.isNaN(+s) ? null : +s
+}
+
+function render(n) {
+  const opts = {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }
+
+  return n.toLocaleString('en-US', opts)
+}
 
 function getCookie(name) {
   const nameEq = name + '='
